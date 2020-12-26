@@ -1,0 +1,78 @@
+1) Delivery_time -> Predict delivery time using sorting time 
+
+Ans-
+summary(delivery_time)
+ Delivery.Time    Sorting.Time  
+ Min.   : 8.00   Min.   : 2.00  
+ 1st Qu.:13.50   1st Qu.: 4.00  
+ Median :17.83   Median : 6.00  
+ Mean   :16.79   Mean   : 6.19  
+ 3rd Qu.:19.75   3rd Qu.: 8.00  
+ Max.   :29.00   Max.   :10.00  
+> # Variance and Standard deviation of Delivery.Time column
+> var(delivery_time$Delivery.Time)
+[1] 25.75462
+> sd(delivery_time$Delivery.Time)
+[1] 5.074901
+> # Variance and Standard deviation of Sorting.Time column
+> var(delivery_time$Sorting.Time)
+[1] 6.461905
+> sd(delivery_time$Sorting.Time)
+[1] 2.542028
+> summary(deliverTimeModel)
+Error in summary(deliverTimeModel) : object 'deliverTimeModel' not found
+> #Creating Linear Model for delivery time
+> deliverTimeModel <- lm(Delivery.Time ~ Sorting.Time, data = delivery_time)
+> (deliverTimeModel)
+
+Call:
+lm(formula = Delivery.Time ~ Sorting.Time, data = delivery_time)
+
+Coefficients:
+ (Intercept)  Sorting.Time  
+       6.583         1.649  
+
+> plot(deliverTimeModel)
+Hit <Return> to see next plot: plot(deliverTimeModel)
+Hit <Return> to see next plot: 
+
+
+
+
+
+
+2) Salary_hike -> Build a prediction model for Salary_hike
+Ans-View(Salary_Data)
+> summary(Salary_Data)
+ YearsExperience      Salary      
+ Min.   : 1.100   Min.   : 37731  
+ 1st Qu.: 3.200   1st Qu.: 56721  
+ Median : 4.700   Median : 65237  
+ Mean   : 5.313   Mean   : 76003  
+ 3rd Qu.: 7.700   3rd Qu.:100545  
+ Max.   :10.500   Max.   :122391  
+> # Variance and Standard deviation of Salary_hike column
+> var(Salary_hike$YearsExperience)
+Error in is.data.frame(x) : object 'Salary_hike' not found
+> # Variance and Standard deviation of Salary_hike column
+> var(Salary_Data$YearsExperience)
+[1] 8.053609
+> sd(Salary_hike$YearsExperience)
+Error in is.data.frame(x) : object 'Salary_hike' not found
+> sd(Salary_Data$YearsExperience)
+[1] 2.837888
+> # Variance and Standard deviation of Churn_out_rate column
+> var(Salary_Data$Salary)
+[1] 751550960
+> sd(Salary_Data$Salary)
+[1] 27414.43
+> Salary_Data_Model <- lm(Salary ~ YearsExperience, data = Salary_Data)
+> summary(Salary_hike_Model)
+Error in summary(Salary_hike_Model) : 
+  object 'Salary_hike_Model' not found
+> plot(Salary_Data_Model)
+Hit <Return> to see next plot: plot(Salary_Data_Model)
+Hit <Return> to see next plot: 
+
+------------------------------------------------------------
+Build a simple linear regression model by performing EDA and do necessary transformations and select the best model using R or Python.
